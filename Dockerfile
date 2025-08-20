@@ -54,8 +54,9 @@ ENV HOST="0.0.0.0"
 ENV SERVER_ORIGIN_URL=""
 ENV MAX_REQUEST_PER_MINUTE=60
 ENV AUTH_CODE=""
-ENV DATABASE_URL=""
 
 RUN chmod +x ./docker-bootstrap.sh
+
+FROM app-sqlite as final
 
 CMD ["./docker-bootstrap.sh"]
